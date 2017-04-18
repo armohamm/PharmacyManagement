@@ -1,0 +1,1 @@
+﻿Starting the project - Pharmacy Management System

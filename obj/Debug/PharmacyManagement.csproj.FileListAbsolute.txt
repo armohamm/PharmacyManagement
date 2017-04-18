@@ -1,0 +1,1 @@
+c:\users\dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe.config
