@@ -6,3 +6,12 @@ C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\Pharm
 C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csproj.GenerateResource.Cache
 C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.exe
 C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.pdb
+C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.MainWindow.resources
+C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.SearchProduct.resources
+C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.UpdateStock.resources
+C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.data.dll
+C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.data.entity.dll
+C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.visualstudio.dll
+C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.web.dll
+C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ProductUI.resources
+C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.StockUI.resources

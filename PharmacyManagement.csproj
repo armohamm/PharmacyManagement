@@ -32,6 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="mysql.data">
+      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data.entity">
+      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.data.entity.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.visualstudio">
+      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.web">
+      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,11 +62,11 @@
     <Compile Include="InventoryManagement\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="InventoryManagement\Product.cs">
+    <Compile Include="InventoryManagement\ProductUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InventoryManagement\Product.Designer.cs">
-      <DependentUpon>Product.cs</DependentUpon>
+    <Compile Include="InventoryManagement\ProductUI.Designer.cs">
+      <DependentUpon>ProductUI.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryManagement\SearchProduct.cs">
       <SubType>Form</SubType>
@@ -62,11 +74,11 @@
     <Compile Include="InventoryManagement\SearchProduct.Designer.cs">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="InventoryManagement\Stock.cs">
+    <Compile Include="InventoryManagement\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InventoryManagement\Stock.Designer.cs">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <Compile Include="InventoryManagement\StockUI.Designer.cs">
+      <DependentUpon>StockUI.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryManagement\UpdateStock.cs">
       <SubType>Form</SubType>
@@ -79,14 +91,14 @@
     <EmbeddedResource Include="InventoryManagement\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InventoryManagement\Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryManagement\ProductUI.resx">
+      <DependentUpon>ProductUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryManagement\SearchProduct.resx">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InventoryManagement\Stock.resx">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryManagement\StockUI.resx">
+      <DependentUpon>StockUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryManagement\UpdateStock.resx">
       <DependentUpon>UpdateStock.cs</DependentUpon>

@@ -16,5 +16,20 @@ namespace PharmacyManagement.InventoryManagement
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            (new ProductUI()).Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            (new SearchProduct()).Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (new StockUI()).Show();
+        }
     }
 }
