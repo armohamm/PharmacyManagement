@@ -31,7 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -48,6 +47,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,23 +63,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -82,7 +81,7 @@
             this.tabControl1.Location = new System.Drawing.Point(9, 207);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(714, 268);
+            this.tabControl1.Size = new System.Drawing.Size(714, 284);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -93,14 +92,13 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(706, 238);
+            this.tabPage1.Size = new System.Drawing.Size(706, 254);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Stock";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBox5);
@@ -117,26 +115,16 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(10, 57);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(689, 159);
+            this.groupBox2.Size = new System.Drawing.Size(689, 177);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Enter the stock details";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(583, 119);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 34);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(502, 119);
+            this.button2.Location = new System.Drawing.Point(520, 137);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
+            this.button2.Size = new System.Drawing.Size(99, 34);
             this.button2.TabIndex = 13;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
@@ -144,9 +132,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(420, 119);
+            this.button1.Location = new System.Drawing.Point(415, 137);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
+            this.button1.Size = new System.Drawing.Size(99, 34);
             this.button1.TabIndex = 12;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
@@ -187,7 +175,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(111, 64);
+            this.dateTimePicker1.Location = new System.Drawing.Point(113, 96);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(119, 25);
             this.dateTimePicker1.TabIndex = 7;
@@ -195,7 +183,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 67);
+            this.label10.Location = new System.Drawing.Point(25, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 17);
             this.label10.TabIndex = 6;
@@ -203,7 +191,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(111, 99);
+            this.numericUpDown1.Location = new System.Drawing.Point(113, 131);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(100, 25);
             this.numericUpDown1.TabIndex = 5;
@@ -211,7 +199,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 101);
+            this.label9.Location = new System.Drawing.Point(26, 133);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 17);
             this.label9.TabIndex = 4;
@@ -219,15 +207,15 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(111, 29);
+            this.textBox3.Location = new System.Drawing.Point(113, 61);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 25);
+            this.textBox3.Size = new System.Drawing.Size(201, 25);
             this.textBox3.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 32);
+            this.label8.Location = new System.Drawing.Point(25, 64);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 17);
             this.label8.TabIndex = 2;
@@ -236,7 +224,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(305, 128);
+            this.label7.Location = new System.Drawing.Point(109, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 1;
@@ -245,7 +233,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(244, 128);
+            this.label6.Location = new System.Drawing.Point(25, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 17);
             this.label6.TabIndex = 0;
@@ -268,6 +256,92 @@
             this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Selected product: ";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(706, 254);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Update/Return";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(17, 203);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(150, 21);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Expired stocks only";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(354, 207);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(117, 17);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "No stock selected";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(252, 207);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 17);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Selected Stock";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(584, 199);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(99, 33);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Update";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(479, 199);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(99, 33);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Return";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView3);
+            this.groupBox4.Location = new System.Drawing.Point(6, 18);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(689, 163);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Select a stock";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(11, 24);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.Size = new System.Drawing.Size(666, 123);
+            this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // groupBox1
             // 
@@ -348,95 +422,11 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged_1);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dataGridView3);
-            this.groupBox4.Location = new System.Drawing.Point(6, 18);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(689, 163);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Select a stock";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(11, 24);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(666, 123);
-            this.dataGridView3.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(422, 187);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 33);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Return";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(514, 187);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 33);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(229, 195);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(102, 17);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Selected Stock:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(331, 195);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 17);
-            this.label17.TabIndex = 11;
-            this.label17.Text = "Stock id";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(607, 187);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(88, 33);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Cancel";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(706, 238);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Update/Return";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // StockUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 496);
+            this.ClientSize = new System.Drawing.Size(735, 503);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -448,13 +438,13 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -480,9 +470,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button5;
@@ -497,5 +485,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

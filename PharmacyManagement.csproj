@@ -68,6 +68,12 @@
     <Compile Include="InventoryManagement\ProductUI.Designer.cs">
       <DependentUpon>ProductUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryManagement\ReturnStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryManagement\ReturnStock.Designer.cs">
+      <DependentUpon>ReturnStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryManagement\SearchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryManagement\ProductUI.resx">
       <DependentUpon>ProductUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryManagement\ReturnStock.resx">
+      <DependentUpon>ReturnStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryManagement\SearchProduct.resx">
       <DependentUpon>SearchProduct.cs</DependentUpon>

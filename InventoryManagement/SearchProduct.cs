@@ -107,5 +107,36 @@ namespace PharmacyManagement.InventoryManagement
                 MessageBox.Show(es.Message);
             }
         }
+
+        private void dataGridViewStock_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewProduct_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewProduct.SelectedRows)
+            {
+                String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ; Convert Zero Datetime = True;";  //open the database
+                MySqlConnection MySqlConn = new MySqlConnection(connString);
+                MySqlCommand command = new MySqlCommand("select stock_id, vendor, exp_date, size, entered_date, cost_price, unit_price, status from stock where product_code = '" + row.Cells[0].Value.ToString() + "' and status <> 'returned' ;", MySqlConn);
+
+                try
+                {
+                    MySqlDataAdapter sqladp = new MySqlDataAdapter();
+                    sqladp.SelectCommand = command;
+                    DataTable datatable = new DataTable();
+                    sqladp.Fill(datatable);
+                    BindingSource bndsrc = new BindingSource();
+                    bndsrc.DataSource = datatable;
+                    dataGridViewStock.DataSource = bndsrc;
+                    sqladp.Update(datatable);
+                }
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.Message);
+                }
+            }
+        }
     }
 }

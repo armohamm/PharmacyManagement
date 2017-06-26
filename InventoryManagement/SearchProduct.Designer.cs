@@ -31,13 +31,13 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewStock = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtBoxPName = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtBoxPCode = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -64,6 +64,7 @@
             this.dataGridViewStock.ReadOnly = true;
             this.dataGridViewStock.Size = new System.Drawing.Size(666, 123);
             this.dataGridViewStock.TabIndex = 0;
+            this.dataGridViewStock.SelectionChanged += new System.EventHandler(this.dataGridViewStock_SelectionChanged);
             // 
             // groupBox3
             // 
@@ -80,6 +81,14 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Select a product";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(570, 154);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(107, 25);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label13
             // 
@@ -134,14 +143,7 @@
             this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.Size = new System.Drawing.Size(666, 123);
             this.dataGridViewProduct.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(570, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 25);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.dataGridViewProduct.SelectionChanged += new System.EventHandler(this.dataGridViewProduct_SelectionChanged);
             // 
             // SearchProduct
             // 

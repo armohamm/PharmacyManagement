@@ -15,3 +15,4 @@ C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\Pharm
 C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.web.dll
 C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ProductUI.resources
 C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.StockUI.resources
+C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ReturnStock.resources

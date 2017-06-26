@@ -31,13 +31,27 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridViewExp = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewReorder = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExp)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(27, 52);
+            this.button1.Location = new System.Drawing.Point(36, 39);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 49);
             this.button1.TabIndex = 0;
@@ -47,7 +61,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(27, 107);
+            this.button2.Location = new System.Drawing.Point(243, 39);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 49);
             this.button2.TabIndex = 1;
@@ -57,7 +71,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(27, 162);
+            this.button4.Location = new System.Drawing.Point(448, 39);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(187, 49);
             this.button4.TabIndex = 3;
@@ -65,39 +79,125 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Select a section to proceed...";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 240);
+            this.label2.Location = new System.Drawing.Point(521, 446);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Developed by teamsolution";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(674, 112);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Select a section to proceed...";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(10, 139);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(674, 283);
+            this.tabControl1.TabIndex = 7;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridViewExp);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(666, 251);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Expired stocks";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewExp
+            // 
+            this.dataGridViewExp.AllowUserToAddRows = false;
+            this.dataGridViewExp.AllowUserToDeleteRows = false;
+            this.dataGridViewExp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewExp.Location = new System.Drawing.Point(11, 14);
+            this.dataGridViewExp.Name = "dataGridViewExp";
+            this.dataGridViewExp.ReadOnly = true;
+            this.dataGridViewExp.Size = new System.Drawing.Size(645, 220);
+            this.dataGridViewExp.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridViewReorder);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(666, 251);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Low stock products";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewReorder
+            // 
+            this.dataGridViewReorder.AllowUserToAddRows = false;
+            this.dataGridViewReorder.AllowUserToDeleteRows = false;
+            this.dataGridViewReorder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReorder.Location = new System.Drawing.Point(11, 14);
+            this.dataGridViewReorder.Name = "dataGridViewReorder";
+            this.dataGridViewReorder.ReadOnly = true;
+            this.dataGridViewReorder.Size = new System.Drawing.Size(645, 220);
+            this.dataGridViewReorder.TabIndex = 0;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(508, 448);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(12, 12);
+            this.dataGridView.TabIndex = 8;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 428);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(82, 33);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 256);
+            this.ClientSize = new System.Drawing.Size(697, 470);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainWindow";
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExp)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,7 +208,14 @@
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridViewExp;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridViewReorder;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button button3;
     }
 }
