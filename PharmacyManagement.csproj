@@ -56,12 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InventoryManagement\DBConnection.cs" />
     <Compile Include="InventoryManagement\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InventoryManagement\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryManagement\Product.cs" />
     <Compile Include="InventoryManagement\ProductUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +82,7 @@
     <Compile Include="InventoryManagement\SearchProduct.Designer.cs">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryManagement\Stock.cs" />
     <Compile Include="InventoryManagement\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>

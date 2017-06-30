@@ -100,6 +100,7 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select a section to proceed...";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tabControl1
             // 
@@ -174,7 +175,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Refresh";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.MainWindow_Load);
             // 
             // MainWindow
             // 

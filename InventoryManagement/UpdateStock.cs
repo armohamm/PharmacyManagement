@@ -35,44 +35,12 @@ namespace PharmacyManagement.InventoryManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int stock_size = 0;
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select stock from product where product_code = '" + product_code + "'", MySqlConn);
-            try
-            {
-                MySqlConn.Open();
-                MySqlDataReader datReader = command.ExecuteReader();
-                while (datReader.Read())
-                {
-                    stock_size = Convert.ToInt32(datReader.GetString("stock"));
-                }
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-            finally
-            {
-                MySqlConn.Close();
-            }
-            command = new MySqlCommand("update stock set vendor = '" + textBox3.Text + "', exp_date = '" + formattedDate(dateTimePicker1.Text) + "', size = '" + numericUpDown1.Value.ToString() + "', unit_price = '" + textBox4.Text + "', cost_price = '" + textBox5.Text + "' where product_code = '" + product_code + "' and stock_id = '" + stock_id + "'", MySqlConn);
-            MySqlCommand command2 = new MySqlCommand("update product set stock = '" + (stock_size + numericUpDown1.Value - Convert.ToInt32(size)) + "' where product_code = '" + product_code + "'", MySqlConn);
-            try
-            {
-                MySqlConn.Open();
-                int numRowsUpdated = command.ExecuteNonQuery();
-                int numRowsUpdated2 = command2.ExecuteNonQuery();
-                MessageBox.Show("Data Updated");
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-            finally
-            {
-                MySqlConn.Close();
-            }
+            Product product = new Product(product_code);
+            Stock stock = new Stock(stock_id, Convert.ToInt32(size));
+
+            product.updateStock(stock, textBox3.Text, dateTimePicker1.Text, Convert.ToInt32(numericUpDown1.Value), textBox4.Text, textBox5.Text);
+           
+            this.Close();
         }
 
         private void UpdateStock_Load(object sender, EventArgs e)
@@ -84,6 +52,7 @@ namespace PharmacyManagement.InventoryManagement
             numericUpDown1.Value = Convert.ToInt32(size);
             textBox4.Text = unit_price;
             textBox5.Text = cost_price;
+            button1.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -99,6 +68,33 @@ namespace PharmacyManagement.InventoryManagement
             arr[1] = arr[0];
             arr[0] = temp;
             return String.Join("-", arr);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox3.Text.Length != 0 && numericUpDown1.Value > 0 && isDigitsOnly(textBox4.Text) && isDigitsOnly(textBox5.Text))
+                button1.Enabled = true;
+            else
+                button1.Enabled = false;
+        }
+
+        private bool isDigitsOnly(String str)
+        {
+            if (str.Length == 0)
+                return false;
+            int count = 0;
+            foreach (char c in str)
+            {
+                if ((c < '0' || c > '9') && c != '.')
+                    return false;
+                if (c == '.')
+                {
+                    count = count + 1;
+                    if (count > 1)
+                        return false;
+                }
+            }
+            return true;
         }
     }
 }

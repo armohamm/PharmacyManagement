@@ -30,22 +30,23 @@ namespace PharmacyManagement.InventoryManagement
             dateTimePicker1.ResetText();
             numericUpDown1.ResetText();
             textBox5.Text = "";
+            button1.Enabled = false;
+            button2.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("insert into pharmacy_management.stock (product_code, stock_id, vendor, exp_date, entered_date, size, cost_price, unit_price) values ('" + Convert.ToInt32(label5.Text) + "','" + Convert.ToInt32(label7.Text) + "','" + textBox3.Text + "','" + formattedDate(dateTimePicker1.Text) + "','" + formattedDate(DateTime.Today.ToString("MM/dd/yyyy")) + "','" + numericUpDown1.Value + "','" + textBox4.Text + "','" + textBox5.Text + "') ", MySqlConn);
-            MySqlDataReader dataReader;
+            Product product = new Product(label5.Text);
+            Stock stock = new Stock(label7.Text, textBox3.Text, dateTimePicker1.Text, Convert.ToInt32(numericUpDown1.Value), textBox4.Text, textBox5.Text);
+            product.addStock(stock);
+
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select count(*) from stock where product_code = '" + label5.Text + "'", mySqlConn);
+          
             try
             {
-                MySqlConn.Open();
-                dataReader = command.ExecuteReader();
-
-                while (dataReader.Read()) { }
-
-                MessageBox.Show("Stock added successfully");
+                mySqlConn.Open();
+                label7.Text = (Convert.ToInt32(command.ExecuteScalar()) + 1).ToString();
             }
             catch (Exception es)
             {
@@ -53,50 +54,9 @@ namespace PharmacyManagement.InventoryManagement
             }
             finally
             {
-                MySqlConn.Close();
-            }
-           
-
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-            {
-                int size = 0;
-                label5.Text = row.Cells[0].Value.ToString();
-                command = new MySqlCommand("select stock from product where product_code = '" + label5.Text + "'", MySqlConn);
-                try
-                {
-                    MySqlConn.Open();
-                    MySqlDataReader datReader = command.ExecuteReader();
-                    while (datReader.Read())
-                    {
-                        size = Convert.ToInt32(datReader.GetString("stock"));
-                    }
-                }
-                catch (Exception es)
-                {
-                    MessageBox.Show(es.Message);
-                }
-                finally
-                {
-                    MySqlConn.Close();
-                }
-                
-                command = new MySqlCommand("select count(*) from stock where product_code = '" + label5.Text + "'", MySqlConn);
-                MySqlCommand command2 = new MySqlCommand("update product set stock = '" + (numericUpDown1.Value + size) + "' where product_code = '" + Convert.ToInt32(label5.Text) + "'", MySqlConn);
-
-                try
-                {
-                    MySqlConn.Open();
-                    label7.Text = (Convert.ToInt32(command.ExecuteScalar()) + 1).ToString();
-                    int numRowsUpdated = command2.ExecuteNonQuery();
-                }
-                catch (Exception es)
-                {
-                    MessageBox.Show(es.Message);
-                }
-                finally
-                {
-                    MySqlConn.Close();
-                }
+                mySqlConn.Close();
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
             }
 
             textBox3.Text = "";
@@ -181,6 +141,9 @@ namespace PharmacyManagement.InventoryManagement
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
+            label7.Text = "No product is selected";
+            button4.Enabled = false;
+            button5.Enabled = false;
             textBox8.Text = "";
             textBox2.Text = "";
             String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
@@ -206,6 +169,9 @@ namespace PharmacyManagement.InventoryManagement
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
+            label7.Text = "No product is selected";
+            button4.Enabled = false;
+            button5.Enabled = false;
             textBox8.Text = "";
             textBox1.Text = "";
             String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
@@ -231,6 +197,9 @@ namespace PharmacyManagement.InventoryManagement
 
         private void textBox8_TextChanged_1(object sender, EventArgs e)
         {
+            label7.Text = "No product is selected";
+            button4.Enabled = false;
+            button5.Enabled = false;
             textBox1.Text = "";
             textBox2.Text = "";
             String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
@@ -256,6 +225,19 @@ namespace PharmacyManagement.InventoryManagement
 
         private void dataGridView1_SelectionChanged_1(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                dataGridView3.Enabled = false;
+            }
+            else
+            {
+                dataGridView3.Enabled = true;
+            }
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            label17.Text = "No stock selected";
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 label5.Text = row.Cells[0].Value.ToString();
@@ -304,6 +286,9 @@ namespace PharmacyManagement.InventoryManagement
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            button4.Enabled = false;
+            button5.Enabled = false;
+            label17.Text = "No stock selected";
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 label5.Text = row.Cells[0].Value.ToString();
@@ -353,6 +338,75 @@ namespace PharmacyManagement.InventoryManagement
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String product_code = "";
+            String stock_id = "";
+            String size = "";
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                product_code = row.Cells[0].Value.ToString();
+
+            }
+            foreach (DataGridViewRow row in dataGridView3.SelectedRows)
+            {
+                stock_id = row.Cells[0].Value.ToString();
+                size = row.Cells[3].Value.ToString();
+            }
+            (new ReturnStock(product_code, stock_id, size)).Show();
+        }
+
+        private void dataGridView3_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView3.SelectedRows)
+            {
+                label17.Text = row.Cells[0].Value.ToString();
+                button4.Enabled = true;
+                button5.Enabled = true;
+            }
+        }
+
+        private void StockUI_Load(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (label7.Text != "No product is selected" && textBox3.Text.Length != 0 && isDigitsOnly(textBox4.Text) && isDigitsOnly(textBox5.Text) && numericUpDown1.Value > 0)
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+            }
+        }
+
+        private bool isDigitsOnly(String str)
+        {
+            if (str.Length == 0)
+                return false;
+            int count = 0;
+            foreach (char c in str)
+            {
+                if ((c < '0' || c > '9') && c != '.')
+                    return false;
+                if (c == '.')
+                {
+                    count = count + 1;
+                    if (count > 1)
+                        return false;
+                }
+            }
+            return true;
         }
     }
 }

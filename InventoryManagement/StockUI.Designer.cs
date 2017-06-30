@@ -146,6 +146,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(115, 25);
             this.textBox5.TabIndex = 11;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -153,6 +154,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(115, 25);
             this.textBox4.TabIndex = 10;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label12
             // 
@@ -195,6 +197,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(100, 25);
             this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label9
             // 
@@ -211,6 +214,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(201, 25);
             this.textBox3.TabIndex = 3;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label8
             // 
@@ -247,6 +251,7 @@
             this.label5.Size = new System.Drawing.Size(146, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "No product is selected";
+            this.label5.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -270,7 +275,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(706, 254);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Update/Return";
+            this.tabPage2.Text = "Update/Return Stock";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
@@ -320,6 +325,7 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Return";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox4
             // 
@@ -342,6 +348,7 @@
             this.dataGridView3.Size = new System.Drawing.Size(666, 123);
             this.dataGridView3.TabIndex = 0;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -432,6 +439,7 @@
             this.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "StockUI";
             this.Text = "Stock";
+            this.Load += new System.EventHandler(this.StockUI_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
