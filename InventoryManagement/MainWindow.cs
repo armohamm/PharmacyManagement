@@ -172,5 +172,30 @@ namespace PharmacyManagement.InventoryManagement
         {
 
         }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void productsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            (new ProductUI()).Show();
+        }
+
+        private void stocksToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            (new StockUI()).Show();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new SearchProduct()).Show();
+        }
+
+        private void stocksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

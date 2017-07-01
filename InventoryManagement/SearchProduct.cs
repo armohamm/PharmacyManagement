@@ -45,7 +45,7 @@ namespace PharmacyManagement.InventoryManagement
 
         private void SearchProduct_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtBoxPName_TextChanged(object sender, EventArgs e)
@@ -137,6 +137,11 @@ namespace PharmacyManagement.InventoryManagement
                     MessageBox.Show(es.Message);
                 }
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
