@@ -22,9 +22,8 @@ namespace PharmacyManagement.InventoryManagement
         {
             txtBoxPName.Text = "";
             textBox1.Text = "";
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where product_code like '%" + txtBoxPCode.Text + "%' ;", MySqlConn);
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where product_code like '%" + txtBoxPCode.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -40,6 +39,11 @@ namespace PharmacyManagement.InventoryManagement
             catch (Exception es)
             {
                 MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
             }
         }
 
@@ -52,9 +56,8 @@ namespace PharmacyManagement.InventoryManagement
         {
             txtBoxPCode.Text = "";
             textBox1.Text = "";
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where name like '%" + txtBoxPName.Text + "%' ;", MySqlConn);
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where name like '%" + txtBoxPName.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -70,6 +73,11 @@ namespace PharmacyManagement.InventoryManagement
             catch (Exception es)
             {
                 MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
             }
         }
 
@@ -87,9 +95,8 @@ namespace PharmacyManagement.InventoryManagement
         {
             txtBoxPCode.Text = "";
             txtBoxPName.Text = "";
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where category like '%" + textBox1.Text + "%' ;", MySqlConn);
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where category like '%" + textBox1.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -106,6 +113,11 @@ namespace PharmacyManagement.InventoryManagement
             {
                 MessageBox.Show(es.Message);
             }
+            finally
+            {
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
+            }
         }
 
         private void dataGridViewStock_SelectionChanged(object sender, EventArgs e)
@@ -117,9 +129,8 @@ namespace PharmacyManagement.InventoryManagement
         {
             foreach (DataGridViewRow row in dataGridViewProduct.SelectedRows)
             {
-                String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ; Convert Zero Datetime = True;";  //open the database
-                MySqlConnection MySqlConn = new MySqlConnection(connString);
-                MySqlCommand command = new MySqlCommand("select stock_id, vendor, exp_date, size, entered_date, cost_price, unit_price, status from stock where product_code = '" + row.Cells[0].Value.ToString() + "' and status <> 'returned' ;", MySqlConn);
+                MySqlConnection mySqlConn = DBConnection.getConn();
+                MySqlCommand command = new MySqlCommand("select stock_id, vendor, exp_date, size, entered_date, cost_price, unit_price, status from stock where product_code = '" + row.Cells[0].Value.ToString() + "' and status <> 'returned' ;", mySqlConn);
 
                 try
                 {
@@ -136,12 +147,22 @@ namespace PharmacyManagement.InventoryManagement
                 {
                     MessageBox.Show(es.Message);
                 }
+                finally
+                {
+                    DBConnection.returnConn(mySqlConn);
+                    mySqlConn = null;
+                }
             }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\Resources\Help.pdf");
         }
     }
 }

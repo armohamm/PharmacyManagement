@@ -156,6 +156,7 @@ namespace PharmacyManagement.InventoryManagement
             finally
             {
                 mySqlConn.Close();
+                DBConnection.returnConn(mySqlConn);
                 mySqlConn = null;
             }
         }
@@ -186,6 +187,7 @@ namespace PharmacyManagement.InventoryManagement
             finally
             {
                 mySqlConn.Close();
+                DBConnection.returnConn(mySqlConn);
                 mySqlConn = null;
             }
         }
@@ -263,12 +265,24 @@ namespace PharmacyManagement.InventoryManagement
                         return false;
                 }
             }
+            try
+            {
+                String temp = str.Split('.')[1];
+                if (temp.Length > 2)
+                    return false;
+            }
+            catch (Exception es) { }
             return true;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\Resources\Help.pdf");
         }
     }
 }

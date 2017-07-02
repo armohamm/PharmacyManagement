@@ -31,7 +31,6 @@ namespace PharmacyManagement.InventoryManagement
             numericUpDown1.ResetText();
             textBox5.Text = "";
             button1.Enabled = false;
-            button2.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -146,9 +145,8 @@ namespace PharmacyManagement.InventoryManagement
             button5.Enabled = false;
             textBox8.Text = "";
             textBox2.Text = "";
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where product_code like '%" + textBox1.Text + "%' ;", MySqlConn);
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where product_code like '%" + textBox1.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -164,6 +162,11 @@ namespace PharmacyManagement.InventoryManagement
             catch (Exception es)
             {
                 MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
             }
         }
 
@@ -174,9 +177,8 @@ namespace PharmacyManagement.InventoryManagement
             button5.Enabled = false;
             textBox8.Text = "";
             textBox1.Text = "";
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where name like '%" + textBox2.Text + "%' ;", MySqlConn);
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where name like '%" + textBox2.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -192,6 +194,11 @@ namespace PharmacyManagement.InventoryManagement
             catch (Exception es)
             {
                 MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
             }
         }
 
@@ -202,9 +209,8 @@ namespace PharmacyManagement.InventoryManagement
             button5.Enabled = false;
             textBox1.Text = "";
             textBox2.Text = "";
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where category like '%" + textBox8.Text + "%' ;", MySqlConn);
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where category like '%" + textBox8.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -220,6 +226,11 @@ namespace PharmacyManagement.InventoryManagement
             catch (Exception es)
             {
                 MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
             }
         }
 
@@ -234,37 +245,32 @@ namespace PharmacyManagement.InventoryManagement
                 dataGridView3.Enabled = true;
             }
             button1.Enabled = false;
-            button2.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
             label17.Text = "No stock selected";
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 label5.Text = row.Cells[0].Value.ToString();
-                String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ; Convert Zero Datetime = True;";  //open the database
-                MySqlConnection MySqlConn = new MySqlConnection(connString);
-                MySqlCommand command = new MySqlCommand("select count(*) from stock where product_code = '" + label5.Text + "'", MySqlConn);
+                MySqlConnection mySqlConn = DBConnection.getConn();
+                MySqlCommand command = new MySqlCommand("select count(*) from stock where product_code = '" + label5.Text + "'", mySqlConn);
 
                 try
                 {
-                    MySqlConn.Open();
+                    mySqlConn.Open();
                     label7.Text = (Convert.ToInt32(command.ExecuteScalar()) + 1).ToString();
                 }
                 catch (Exception es)
                 {
                     MessageBox.Show(es.Message);
                 }
-                finally
-                {
-                    MySqlConn.Close();
-                }
+
                 if (checkBox1.Checked)
                 {
-                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' and status = 'expired' ;", MySqlConn);
+                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' and status = 'expired' ;", mySqlConn);
                 }
                 else
                 {
-                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' ;", MySqlConn);
+                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' ;", mySqlConn);
                 }
                 try
                 {
@@ -280,6 +286,12 @@ namespace PharmacyManagement.InventoryManagement
                 catch (Exception es)
                 {
                     MessageBox.Show(es.Message);
+                }
+                finally
+                {
+                    mySqlConn.Close();
+                    DBConnection.returnConn(mySqlConn);
+                    mySqlConn = null;
                 }
             }
         }
@@ -292,30 +304,26 @@ namespace PharmacyManagement.InventoryManagement
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 label5.Text = row.Cells[0].Value.ToString();
-                String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ; Convert Zero Datetime = True;";  //open the database
-                MySqlConnection MySqlConn = new MySqlConnection(connString);
-                MySqlCommand command = new MySqlCommand("select count(*) from stock where product_code = '" + label5.Text + "'", MySqlConn);
+                MySqlConnection mySqlConn = DBConnection.getConn();
+                MySqlCommand command = new MySqlCommand("select count(*) from stock where product_code = '" + label5.Text + "'", mySqlConn);
 
                 try
                 {
-                    MySqlConn.Open();
+                    mySqlConn.Open();
                     label7.Text = (Convert.ToInt32(command.ExecuteScalar()) + 1).ToString();
                 }
                 catch (Exception es)
                 {
                     MessageBox.Show(es.Message);
                 }
-                finally
-                {
-                    MySqlConn.Close();
-                }
+                
                 if (checkBox1.Checked)
                 {
-                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' and status = 'expired' ;", MySqlConn);
+                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' and status = 'expired' ;", mySqlConn);
                 }
                 else
                 {
-                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' ;", MySqlConn);
+                    command = new MySqlCommand("select stock_id, vendor, exp_date, size, cost_price, unit_price, status from stock where product_code = '" + label5.Text + "' and status <> 'returned' ;", mySqlConn);
                 }
                 try
                 {
@@ -331,6 +339,12 @@ namespace PharmacyManagement.InventoryManagement
                 catch (Exception es)
                 {
                     MessageBox.Show(es.Message);
+                }
+                finally
+                {
+                    mySqlConn.Close();
+                    DBConnection.returnConn(mySqlConn);
+                    mySqlConn = null;
                 }
             }
         }
@@ -371,7 +385,6 @@ namespace PharmacyManagement.InventoryManagement
         private void StockUI_Load(object sender, EventArgs e)
         {
             button1.Enabled = false;
-            button2.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
         }
@@ -381,12 +394,10 @@ namespace PharmacyManagement.InventoryManagement
             if (label7.Text != "No product is selected" && textBox3.Text.Length != 0 && isDigitsOnly(textBox4.Text) && isDigitsOnly(textBox5.Text) && numericUpDown1.Value > 0)
             {
                 button1.Enabled = true;
-                button2.Enabled = true;
             }
             else
             {
                 button1.Enabled = false;
-                button2.Enabled = false;
             }
         }
 
@@ -406,12 +417,24 @@ namespace PharmacyManagement.InventoryManagement
                         return false;
                 }
             }
+            try
+            {
+                String temp = str.Split('.')[1];
+                if (temp.Length > 2)
+                    return false;
+            }
+            catch(Exception es) {}
             return true;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\Resources\Help.pdf");
         }
     }
 }

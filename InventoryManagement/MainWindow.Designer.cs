@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewExp = new System.Windows.Forms.DataGridView();
@@ -50,7 +47,11 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTeamsolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExp)).BeginInit();
@@ -58,69 +59,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(36, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Products";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(243, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 49);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Stocks";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(448, 39);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(187, 49);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(521, 461);
+            this.label2.Location = new System.Drawing.Point(525, 459);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Developed by teamsolution";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(10, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(674, 112);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Select a section to proceed...";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(10, 154);
+            this.tabControl1.Location = new System.Drawing.Point(10, 202);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(674, 283);
+            this.tabControl1.Size = new System.Drawing.Size(674, 235);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -129,7 +88,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(666, 251);
+            this.tabPage1.Size = new System.Drawing.Size(666, 203);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Expired stocks";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -143,7 +102,7 @@
             this.dataGridViewExp.Location = new System.Drawing.Point(11, 14);
             this.dataGridViewExp.Name = "dataGridViewExp";
             this.dataGridViewExp.ReadOnly = true;
-            this.dataGridViewExp.Size = new System.Drawing.Size(645, 220);
+            this.dataGridViewExp.Size = new System.Drawing.Size(645, 180);
             this.dataGridViewExp.TabIndex = 0;
             // 
             // tabPage2
@@ -152,7 +111,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(666, 251);
+            this.tabPage2.Size = new System.Drawing.Size(666, 203);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Low stock products";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -166,7 +125,7 @@
             this.dataGridViewReorder.Location = new System.Drawing.Point(11, 14);
             this.dataGridViewReorder.Name = "dataGridViewReorder";
             this.dataGridViewReorder.ReadOnly = true;
-            this.dataGridViewReorder.Size = new System.Drawing.Size(645, 220);
+            this.dataGridViewReorder.Size = new System.Drawing.Size(645, 180);
             this.dataGridViewReorder.TabIndex = 0;
             // 
             // dataGridView
@@ -174,7 +133,7 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(508, 463);
+            this.dataGridView.Location = new System.Drawing.Point(512, 461);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(12, 12);
@@ -187,6 +146,7 @@
             this.button3.Size = new System.Drawing.Size(82, 33);
             this.button3.TabIndex = 9;
             this.button3.Text = "Refresh";
+            this.toolTip1.SetToolTip(this.button3, "Refersh Expired stocks and Low stock products");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.MainWindow_Load);
             // 
@@ -263,17 +223,78 @@
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
             this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewHelpToolStripMenuItem.Text = "View help";
+            this.viewHelpToolStripMenuItem.Click += new System.EventHandler(this.viewHelpToolStripMenuItem_Click);
             // 
             // aboutTeamsolutionToolStripMenuItem
             // 
             this.aboutTeamsolutionToolStripMenuItem.Name = "aboutTeamsolutionToolStripMenuItem";
             this.aboutTeamsolutionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutTeamsolutionToolStripMenuItem.Text = "About teamsolution";
+            this.aboutTeamsolutionToolStripMenuItem.Click += new System.EventHandler(this.aboutTeamsolutionToolStripMenuItem_Click);
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button4.Image = global::PharmacyManagement.Properties.Resources.search;
+            this.button4.Location = new System.Drawing.Point(474, 29);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(117, 124);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Search";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button4, "Search Products for Product and Stock details");
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Image = global::PharmacyManagement.Properties.Resources.stock;
+            this.button2.Location = new System.Drawing.Point(268, 29);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 124);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Stocks";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button2, "Add, Update or Return Stocks");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Image = global::PharmacyManagement.Properties.Resources.product;
+            this.button1.Location = new System.Drawing.Point(67, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 124);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Products";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.button1, "Add or Update Products");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackgroundImage = global::PharmacyManagement.Properties.Resources.back;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.groupBox1.Location = new System.Drawing.Point(10, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(674, 169);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Select a section to proceed...";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(697, 483);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView);
@@ -290,7 +311,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Inventory";
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExp)).EndInit();
@@ -299,6 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +349,6 @@
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem stocksToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
