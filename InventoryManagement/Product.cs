@@ -70,10 +70,10 @@ namespace PharmacyManagement.InventoryManagement
             }
         }
 
-        public void addStock(Stock stock)
+        public void addStock(String user, Stock stock)
         {
             MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("insert into pharmacy_management.stock (product_code, stock_id, vendor, exp_date, entered_date, size, cost_price, unit_price) values ('" + product_code + "','" + stock.getStockID() + "','" + stock.getVendor() + "','" + formattedDate(stock.getExpDate()) + "','" + formattedDate(DateTime.Today.ToString("MM/dd/yyyy")) + "','" + stock.getSize() + "','" + stock.getUnitPrice() + "','" + stock.getCostPrice() + "') ", mySqlConn);
+            MySqlCommand command = new MySqlCommand("insert into pharmacy_management.stock (product_code, stock_id, vendor, exp_date, entered_date, size, shop, cost_price, unit_price) values ('" + product_code + "','" + stock.getStockID() + "','" + stock.getVendor() + "','" + formattedDate(stock.getExpDate()) + "','" + formattedDate(DateTime.Today.ToString("MM/dd/yyyy")) + "','" + stock.getSize() + "','" + stock.getShop() + "','" + stock.getUnitPrice() + "','" + stock.getCostPrice() + "') ", mySqlConn);
             MySqlDataReader dataReader;
             try
             {
@@ -82,7 +82,11 @@ namespace PharmacyManagement.InventoryManagement
 
                 while (dataReader.Read()) { }
 
+                dataReader.Close();
                 MessageBox.Show("Stock added successfully");
+
+                StockReport stockReport = new StockReport();
+                stockReport.addToReport(user, product_code, stock.getStockID(), "added", stock.getVendor(), stock.getExpDate(), stock.getSize(), stock.getShop(), stock.getCostPrice(), stock.getUnitPrice());
             }
             catch (Exception es)
             {
@@ -94,18 +98,18 @@ namespace PharmacyManagement.InventoryManagement
             }
 
             int size = 0;
-            command = new MySqlCommand("select stock from product where product_code = '" + product_code + "'", mySqlConn);
-            
+            command = new MySqlCommand("select stock_shop_" + stock.getShop()+  " from product where product_code = '" + product_code + "'", mySqlConn);
             try
             {
                 mySqlConn.Open();
                 MySqlDataReader datReader = command.ExecuteReader();
                 while (datReader.Read())
                 {
-                    size = Convert.ToInt32(datReader.GetString("stock"));
+                    size = Convert.ToInt32(datReader.GetString("stock_shop_" + stock.getShop()));
                 }
 
-                MySqlCommand command2 = new MySqlCommand("update product set stock = '" + (stock.getStockID() + size) + "' where product_code = '" + product_code + "'", mySqlConn);
+                datReader.Close();
+                MySqlCommand command2 = new MySqlCommand("update product set stock_shop_" + stock.getShop() + " = '" + (stock.getSize() + size) + "' where product_code = '" + product_code + "'", mySqlConn);
                 int numRowsUpdated = command2.ExecuteNonQuery();
             }
             catch (Exception es)
@@ -120,18 +124,18 @@ namespace PharmacyManagement.InventoryManagement
             }
         }
 
-        public void returnStock(Stock stock, int remStock)
+        public void returnStock(String user, Stock stock, int remStock)
         {
             int stock_size = 0;
             MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("select stock from product where product_code = '" + product_code + "'", mySqlConn);
+            MySqlCommand command = new MySqlCommand("select stock_shop_" + stock.getShop() + " from product where product_code = '" + product_code + "'", mySqlConn);
             try
             {
                 mySqlConn.Open();
                 MySqlDataReader datReader = command.ExecuteReader();
                 while (datReader.Read())
                 {
-                    stock_size = Convert.ToInt32(datReader.GetString("stock"));
+                    stock_size = Convert.ToInt32(datReader.GetString("stock_shop_" + stock.getShop()));
                 }
             }
             catch (Exception es)
@@ -143,13 +147,17 @@ namespace PharmacyManagement.InventoryManagement
                 mySqlConn.Close();
             }
             command = new MySqlCommand("update stock set status = 'returned', returned_date = '" + formattedDate(DateTime.Today.ToString("MM/dd/yyyy")) + "' where product_code = '" + product_code + "' and stock_id = '" + stock.getStockID() + "'", mySqlConn);
-            MySqlCommand command2 = new MySqlCommand("update product set stock = '" + (stock_size - (Convert.ToInt32(stock.getSize()) - remStock)) + "' where product_code = '" + product_code + "'", mySqlConn);
+            MySqlCommand command2 = new MySqlCommand("update product set stock_shop_" + stock.getShop() + " = '" + (stock_size - (Convert.ToInt32(stock.getSize()) - remStock)) + "' where product_code = '" + product_code + "'", mySqlConn);
+            MessageBox.Show("update product set stock_shop_" + stock.getShop() + " = '" + (stock_size - (Convert.ToInt32(stock.getSize()) - remStock)) + "' where product_code = '" + product_code + "'");
             try
             {
                 mySqlConn.Open();
                 int numRowsUpdated = command.ExecuteNonQuery();
                 int numRowsUpdated2 = command2.ExecuteNonQuery();
                 MessageBox.Show("Data Updated");
+
+                StockReport stockReport = new StockReport();
+                stockReport.addToReport(user, product_code, stock.getStockID(), "returned", stock.getVendor(), stock.getExpDate(), remStock, stock.getShop(), stock.getCostPrice(), stock.getUnitPrice());
             }
             catch (Exception es)
             {
@@ -163,18 +171,18 @@ namespace PharmacyManagement.InventoryManagement
             }
         }
 
-        public void updateStock(Stock stock, String vendor, String exp_date, int size, String unit_price, String cost_price) 
+        public void updateStock(String user, Stock stock, String vendor, String exp_date, int size, String unit_price, String cost_price) 
         {
             int stock_size = 0;
             MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("select stock from product where product_code = '" + product_code + "'", mySqlConn);
+            MySqlCommand command = new MySqlCommand("select stock_shop_" + stock.getShop() + " from product where product_code = '" + product_code + "'", mySqlConn);
             try
             {
                 mySqlConn.Open();
                 MySqlDataReader datReader = command.ExecuteReader();
                 while (datReader.Read())
                 {
-                    stock_size = Convert.ToInt32(datReader.GetString("stock"));
+                    stock_size = Convert.ToInt32(datReader.GetString("stock_shop_" + stock.getShop()));
                 }
             }
             catch (Exception es)
@@ -187,13 +195,17 @@ namespace PharmacyManagement.InventoryManagement
             }
 
             command = new MySqlCommand("update stock set vendor = '" + vendor + "', exp_date = '" + formattedDate(exp_date) + "', size = '" + size + "', unit_price = '" + unit_price + "', cost_price = '" + cost_price + "' where product_code = '" + product_code + "' and stock_id = '" + stock.getStockID() + "'", mySqlConn);
-            MySqlCommand command2 = new MySqlCommand("update product set stock = '" + (stock_size + size - stock.getSize()) + "' where product_code = '" + product_code + "'", mySqlConn);
+            MySqlCommand command2 = new MySqlCommand("update product set stock_shop_" + stock.getShop() + " = '" + (stock_size + size - stock.getSize()) + "' where product_code = '" + product_code + "'", mySqlConn);
             try
             {
                 mySqlConn.Open();
                 int numRowsUpdated = command.ExecuteNonQuery();
                 int numRowsUpdated2 = command2.ExecuteNonQuery();
                 MessageBox.Show("Data Updated");
+
+                StockReport stockReport = new StockReport();
+                stockReport.addToReport(user, product_code, stock.getStockID(), "updated", vendor, exp_date, size, stock.getShop(), cost_price, unit_price);
+
             }
             catch (Exception es)
             {
@@ -215,6 +227,6 @@ namespace PharmacyManagement.InventoryManagement
             arr[1] = arr[0];
             arr[0] = temp;
             return String.Join("-", arr);
-        }
+        } 
     }
 }

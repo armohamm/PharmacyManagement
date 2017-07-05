@@ -17,7 +17,7 @@ namespace PharmacyManagement
             InventoryManagement.DBConnection.loadQueue();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventoryManagement.MainWindow());
+            Application.Run(new InventoryManagement.MainWindow("Dilantha", "Owner", "Shop1"));
         }
     }
 }

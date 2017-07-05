@@ -47,11 +47,6 @@ namespace PharmacyManagement.InventoryManagement
             }
         }
 
-        private void SearchProduct_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void txtBoxPName_TextChanged(object sender, EventArgs e)
         {
             txtBoxPCode.Text = "";
@@ -163,6 +158,11 @@ namespace PharmacyManagement.InventoryManagement
         private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\Resources\Help.pdf");
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

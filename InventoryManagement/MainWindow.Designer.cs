@@ -52,6 +52,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExp)).BeginInit();
@@ -65,10 +67,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(525, 459);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(536, 457);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 15);
+            this.label2.Size = new System.Drawing.Size(148, 14);
             this.label2.TabIndex = 5;
             this.label2.Text = "Developed by teamsolution";
             // 
@@ -76,6 +79,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(10, 202);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -84,11 +88,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = global::PharmacyManagement.Properties.Resources.contactformbgnd;
             this.tabPage1.Controls.Add(this.dataGridViewExp);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(666, 203);
+            this.tabPage1.Size = new System.Drawing.Size(666, 207);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Expired stocks";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -107,11 +112,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::PharmacyManagement.Properties.Resources.contactformbgnd;
             this.tabPage2.Controls.Add(this.dataGridViewReorder);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(666, 203);
+            this.tabPage2.Size = new System.Drawing.Size(666, 207);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Low stock products";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -120,7 +126,7 @@
             // 
             this.dataGridViewReorder.AllowUserToAddRows = false;
             this.dataGridViewReorder.AllowUserToDeleteRows = false;
-            this.dataGridViewReorder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridViewReorder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReorder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReorder.Location = new System.Drawing.Point(11, 14);
             this.dataGridViewReorder.Name = "dataGridViewReorder";
@@ -133,7 +139,7 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(512, 461);
+            this.dataGridView.Location = new System.Drawing.Point(523, 458);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(12, 12);
@@ -141,6 +147,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(10, 443);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(82, 33);
@@ -281,6 +288,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Location = new System.Drawing.Point(10, 27);
             this.groupBox1.Name = "groupBox1";
@@ -290,12 +298,35 @@
             this.groupBox1.Text = "Select a section to proceed...";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(532, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 14);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "logged in as:";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(604, 5);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(63, 14);
+            this.lblUser.TabIndex = 12;
+            this.lblUser.Text = "user_name";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BackgroundImage = global::PharmacyManagement.Properties.Resources.contactformbgnd;
             this.ClientSize = new System.Drawing.Size(697, 483);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.tabControl1);
@@ -350,5 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem stocksToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUser;
     }
 }

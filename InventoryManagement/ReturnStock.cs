@@ -13,15 +13,19 @@ namespace PharmacyManagement.InventoryManagement
 {
     public partial class ReturnStock : Form
     {
+        String user;
         String product_code = "";
         String stock_id = "";
         String size = "";
-        public ReturnStock(String product_code, String stock_id, String size)
+        int shop = 0;
+        public ReturnStock(String user, String product_code, String stock_id, String size, int shop)
         {
             InitializeComponent();
             this.product_code = product_code;
             this.stock_id = stock_id;
             this.size = size;
+            this.shop = shop;
+            this.user = user;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -37,9 +41,10 @@ namespace PharmacyManagement.InventoryManagement
         private void button1_Click(object sender, EventArgs e)
         {
             Product product = new Product(product_code);
-            Stock stock = new Stock(stock_id, Convert.ToInt32(size));
+            Stock stock = new Stock(stock_id, Convert.ToInt32(size), shop);
 
-            product.returnStock(stock, Convert.ToInt32(numericUpDown1.Value));
+            product.returnStock(user, stock, Convert.ToInt32(numericUpDown1.Value));
+
             this.Close();
         }
 

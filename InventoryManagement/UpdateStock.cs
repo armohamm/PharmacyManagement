@@ -13,6 +13,7 @@ namespace PharmacyManagement.InventoryManagement
 {
     public partial class UpdateStock : Form
     {
+        String user;
         String product_code;
         String stock_id;
         String vendor;
@@ -20,8 +21,9 @@ namespace PharmacyManagement.InventoryManagement
         String size;
         String cost_price;
         String unit_price;
+        int shop;
 
-        public UpdateStock(String product_code, String stock_id, String vendor, String exp_date, String size, String cost_price, String unit_price)
+        public UpdateStock(String user, String product_code, String stock_id, String vendor, String exp_date, String size, String cost_price, String unit_price, int shop)
         {
             InitializeComponent();
             this.product_code = product_code;
@@ -31,15 +33,17 @@ namespace PharmacyManagement.InventoryManagement
             this.size = size;
             this.cost_price = cost_price;
             this.unit_price = unit_price;
+            this.shop = shop;
+            this.user = user;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Product product = new Product(product_code);
-            Stock stock = new Stock(stock_id, Convert.ToInt32(size));
+            Stock stock = new Stock(stock_id, Convert.ToInt32(size), shop);
 
-            product.updateStock(stock, textBox3.Text, dateTimePicker1.Text, Convert.ToInt32(numericUpDown1.Value), textBox4.Text, textBox5.Text);
-           
+            product.updateStock(user, stock, textBox3.Text, dateTimePicker1.Text, Convert.ToInt32(numericUpDown1.Value), textBox4.Text, textBox5.Text);
+
             this.Close();
         }
 

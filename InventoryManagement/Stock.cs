@@ -12,21 +12,28 @@ namespace PharmacyManagement.InventoryManagement
         private String vendor;
         private String exp_date;
         private int size;
+        private int shop;
         private String cost_price;
         private String unit_price;
 
-        public Stock(String stock_id, int size)
+        public Stock(String stock_id, int size, int shop)
         {
             this.stock_id = stock_id;
             this.size = size;
+            this.shop = shop;
+            this.vendor = "";
+            this.exp_date = "";
+            this.cost_price = "";
+            this.unit_price = "";
         }
 
-        public Stock(String stock_id, String vendor, String exp_date, int size, String cost_price, String unit_price)
+        public Stock(String stock_id, String vendor, String exp_date, int size, int shop, String cost_price, String unit_price)
         {
             this.stock_id = stock_id;
             this.vendor = vendor;
             this.exp_date = exp_date;
             this.size = size;
+            this.shop = shop;
             this.cost_price = cost_price;
             this.unit_price = unit_price;
         }
@@ -44,6 +51,11 @@ namespace PharmacyManagement.InventoryManagement
         public int getSize()
         {
             return size;
+        }
+
+        public int getShop()
+        {
+            return shop;
         }
 
         public String getUnitPrice()

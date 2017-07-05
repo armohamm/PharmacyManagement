@@ -14,14 +14,22 @@ namespace PharmacyManagement.InventoryManagement
 {
     public partial class MainWindow : Form
     {
-        public MainWindow()
+        private String user_name;
+        private String type;
+        private String shop;
+
+        public MainWindow(String user_name, String type, String shop)
         {
             InitializeComponent();
+            lblUser.Text = user_name;
+            this.user_name = user_name;
+            this.type = type;
+            this.shop = shop;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            (new ProductUI()).Show();
+            (new ProductUI(user_name)).Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -31,14 +39,16 @@ namespace PharmacyManagement.InventoryManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            (new StockUI()).Show();
+            (new StockUI(user_name, shop)).Show();
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            if (type == "Supervisor")
+                button1.Enabled = false;
             String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
             MySqlConnection MySqlConn = new MySqlConnection(connString);
-            MySqlCommand command = new MySqlCommand("select product_code, stock, re_order_size from product", MySqlConn);
+            MySqlCommand command = new MySqlCommand("select product_code, stock_shop_1, stock_shop_2, re_order_size from product", MySqlConn);
 
             try
             {
@@ -62,7 +72,7 @@ namespace PharmacyManagement.InventoryManagement
                 MySqlConn.Open();
                 foreach (DataGridViewRow row in dataGridView.Rows)
                 {
-                    if (Convert.ToInt32(row.Cells[1].Value.ToString()) < Convert.ToInt32(row.Cells[2].Value.ToString()))
+                    if (Convert.ToInt32(row.Cells[1].Value.ToString()) < Convert.ToInt32(row.Cells[3].Value.ToString()) || Convert.ToInt32(row.Cells[2].Value.ToString()) < Convert.ToInt32(row.Cells[3].Value.ToString()))
                     {
                         command = new MySqlCommand("update product set re_order_status = 'true' where product_code = '" + row.Cells[0].Value.ToString() + "'", MySqlConn);
                         command.ExecuteNonQuery();
@@ -82,7 +92,7 @@ namespace PharmacyManagement.InventoryManagement
             {
                 MySqlConn.Close();
             }
-            command = new MySqlCommand("select product_code, name, description, category, stock, re_order_size from product where re_order_status = 'true'", MySqlConn);
+            command = new MySqlCommand("select product_code, name, description, category, stock_shop_1, stock_shop_2, re_order_size from product where re_order_status = 'true'", MySqlConn);
 
             try
             {
@@ -180,12 +190,12 @@ namespace PharmacyManagement.InventoryManagement
 
         private void productsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            (new ProductUI()).Show();
+            (new ProductUI(user_name)).Show();
         }
 
         private void stocksToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            (new StockUI()).Show();
+            (new StockUI(user_name, shop)).Show();
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)

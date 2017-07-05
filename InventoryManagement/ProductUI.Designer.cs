@@ -52,13 +52,14 @@
             this.txtBoxUPriceU = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtBoxCategoryS = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.txtBoxPNameS = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBoxPCodeS = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.numUpDownROrderU = new System.Windows.Forms.NumericUpDown();
             this.btnCancel2 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -72,12 +73,15 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownRSize)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownROrderU)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -87,7 +91,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(13, 29);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -97,15 +101,16 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = global::PharmacyManagement.Properties.Resources.contactformbgnd;
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.btnCancel1);
             this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.btnAdd);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(668, 382);
+            this.tabPage1.Size = new System.Drawing.Size(668, 384);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Product";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -135,7 +140,7 @@
             // 
             this.txtBoxUPrice.Location = new System.Drawing.Point(165, 246);
             this.txtBoxUPrice.Name = "txtBoxUPrice";
-            this.txtBoxUPrice.Size = new System.Drawing.Size(100, 25);
+            this.txtBoxUPrice.Size = new System.Drawing.Size(100, 23);
             this.txtBoxUPrice.TabIndex = 14;
             this.txtBoxUPrice.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -144,7 +149,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(20, 249);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 17);
+            this.label7.Size = new System.Drawing.Size(61, 15);
             this.label7.TabIndex = 13;
             this.label7.Text = "Unit Price";
             // 
@@ -153,12 +158,12 @@
             this.numUpDownRSize.Location = new System.Drawing.Point(165, 213);
             this.numUpDownRSize.Margin = new System.Windows.Forms.Padding(4);
             this.numUpDownRSize.Maximum = new decimal(new int[] {
-            200,
+            1000,
             0,
             0,
             0});
             this.numUpDownRSize.Name = "numUpDownRSize";
-            this.numUpDownRSize.Size = new System.Drawing.Size(131, 25);
+            this.numUpDownRSize.Size = new System.Drawing.Size(131, 23);
             this.numUpDownRSize.TabIndex = 10;
             this.numUpDownRSize.ValueChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -168,7 +173,7 @@
             this.label6.Location = new System.Drawing.Point(20, 215);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 17);
+            this.label6.Size = new System.Drawing.Size(79, 15);
             this.label6.TabIndex = 9;
             this.label6.Text = "Reorder Size:";
             // 
@@ -192,7 +197,7 @@
             this.cmbBoxCategory.Location = new System.Drawing.Point(165, 180);
             this.cmbBoxCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxCategory.Name = "cmbBoxCategory";
-            this.cmbBoxCategory.Size = new System.Drawing.Size(129, 25);
+            this.cmbBoxCategory.Size = new System.Drawing.Size(129, 23);
             this.cmbBoxCategory.TabIndex = 7;
             this.cmbBoxCategory.SelectedIndexChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -211,7 +216,7 @@
             this.txtBoxName.Location = new System.Drawing.Point(165, 56);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(279, 25);
+            this.txtBoxName.Size = new System.Drawing.Size(279, 23);
             this.txtBoxName.TabIndex = 5;
             this.txtBoxName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -222,7 +227,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(105, 17);
+            this.label5.Size = new System.Drawing.Size(91, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "Auto Generated";
             // 
@@ -232,7 +237,7 @@
             this.label4.Location = new System.Drawing.Point(20, 183);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Category:";
             // 
@@ -242,7 +247,7 @@
             this.label3.Location = new System.Drawing.Point(20, 91);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 17);
+            this.label3.Size = new System.Drawing.Size(75, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Description:";
             // 
@@ -252,7 +257,7 @@
             this.label2.Location = new System.Drawing.Point(20, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 17);
+            this.label2.Size = new System.Drawing.Size(88, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Product Name:";
             // 
@@ -262,7 +267,7 @@
             this.label1.Location = new System.Drawing.Point(20, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 17);
+            this.label1.Size = new System.Drawing.Size(83, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Code:";
             // 
@@ -302,6 +307,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.BackgroundImage = global::PharmacyManagement.Properties.Resources.contactformbgnd;
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.txtBoxUPriceU);
@@ -315,11 +321,11 @@
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(668, 382);
+            this.tabPage2.Size = new System.Drawing.Size(668, 384);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update Product";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -327,9 +333,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(141, 214);
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Location = new System.Drawing.Point(141, 223);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(146, 17);
+            this.label15.Size = new System.Drawing.Size(130, 15);
             this.label15.TabIndex = 29;
             this.label15.Text = "No product is selected";
             this.label15.Click += new System.EventHandler(this.label15_Click);
@@ -337,9 +344,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 214);
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Location = new System.Drawing.Point(14, 223);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(120, 17);
+            this.label16.Size = new System.Drawing.Size(104, 15);
             this.label16.TabIndex = 28;
             this.label16.Text = "Selected product: ";
             // 
@@ -347,42 +355,106 @@
             // 
             this.txtBoxUPriceU.Location = new System.Drawing.Point(514, 251);
             this.txtBoxUPriceU.Name = "txtBoxUPriceU";
-            this.txtBoxUPriceU.Size = new System.Drawing.Size(137, 25);
+            this.txtBoxUPriceU.Size = new System.Drawing.Size(137, 23);
             this.txtBoxUPriceU.TabIndex = 27;
             this.txtBoxUPriceU.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Location = new System.Drawing.Point(406, 254);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 17);
+            this.label14.Size = new System.Drawing.Size(61, 15);
             this.label14.TabIndex = 26;
             this.label14.Text = "Unit Price";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtBoxCategoryS);
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.txtBoxPNameS);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.txtBoxPCodeS);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Location = new System.Drawing.Point(10, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(650, 188);
+            this.groupBox1.Size = new System.Drawing.Size(650, 203);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select a product to update";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtBoxCategoryS);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.txtBoxPNameS);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.txtBoxPCodeS);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(7, 151);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(634, 46);
+            this.groupBox3.TabIndex = 20;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Search by";
+            // 
             // txtBoxCategoryS
             // 
-            this.txtBoxCategoryS.Location = new System.Drawing.Point(549, 156);
+            this.txtBoxCategoryS.Location = new System.Drawing.Point(535, 18);
             this.txtBoxCategoryS.Name = "txtBoxCategoryS";
-            this.txtBoxCategoryS.Size = new System.Drawing.Size(92, 25);
+            this.txtBoxCategoryS.Size = new System.Drawing.Size(92, 23);
             this.txtBoxCategoryS.TabIndex = 19;
             this.txtBoxCategoryS.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(477, 22);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 15);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Category";
+            // 
+            // txtBoxPNameS
+            // 
+            this.txtBoxPNameS.Location = new System.Drawing.Point(311, 18);
+            this.txtBoxPNameS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxPNameS.Name = "txtBoxPNameS";
+            this.txtBoxPNameS.Size = new System.Drawing.Size(144, 23);
+            this.txtBoxPNameS.TabIndex = 15;
+            this.txtBoxPNameS.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(223, 22);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 15);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Product Name";
+            // 
+            // txtBoxPCodeS
+            // 
+            this.txtBoxPCodeS.Location = new System.Drawing.Point(91, 18);
+            this.txtBoxPCodeS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxPCodeS.Name = "txtBoxPCodeS";
+            this.txtBoxPCodeS.Size = new System.Drawing.Size(111, 23);
+            this.txtBoxPCodeS.TabIndex = 13;
+            this.txtBoxPCodeS.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(9, 22);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 15);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Product code";
             // 
             // dataGridView1
             // 
@@ -391,6 +463,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(7, 25);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(634, 124);
@@ -398,60 +471,17 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(477, 160);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 17);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Category";
-            // 
-            // txtBoxPNameS
-            // 
-            this.txtBoxPNameS.Location = new System.Drawing.Point(325, 156);
-            this.txtBoxPNameS.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxPNameS.Name = "txtBoxPNameS";
-            this.txtBoxPNameS.Size = new System.Drawing.Size(144, 25);
-            this.txtBoxPNameS.TabIndex = 15;
-            this.txtBoxPNameS.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(219, 160);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(98, 17);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Product Name";
-            // 
-            // txtBoxPCodeS
-            // 
-            this.txtBoxPCodeS.Location = new System.Drawing.Point(100, 156);
-            this.txtBoxPCodeS.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxPCodeS.Name = "txtBoxPCodeS";
-            this.txtBoxPCodeS.Size = new System.Drawing.Size(111, 25);
-            this.txtBoxPCodeS.TabIndex = 13;
-            this.txtBoxPCodeS.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 160);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 17);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Product code";
-            // 
             // numUpDownROrderU
             // 
             this.numUpDownROrderU.Location = new System.Drawing.Point(514, 283);
             this.numUpDownROrderU.Margin = new System.Windows.Forms.Padding(4);
+            this.numUpDownROrderU.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numUpDownROrderU.Name = "numUpDownROrderU";
-            this.numUpDownROrderU.Size = new System.Drawing.Size(137, 25);
+            this.numUpDownROrderU.Size = new System.Drawing.Size(137, 23);
             this.numUpDownROrderU.TabIndex = 24;
             this.numUpDownROrderU.ValueChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
@@ -497,7 +527,7 @@
             this.cmbBoxCategoryU.Location = new System.Drawing.Point(107, 330);
             this.cmbBoxCategoryU.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxCategoryU.Name = "cmbBoxCategoryU";
-            this.cmbBoxCategoryU.Size = new System.Drawing.Size(137, 25);
+            this.cmbBoxCategoryU.Size = new System.Drawing.Size(137, 23);
             this.cmbBoxCategoryU.TabIndex = 20;
             this.cmbBoxCategoryU.SelectedIndexChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
@@ -514,35 +544,39 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(406, 285);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 17);
+            this.label8.Size = new System.Drawing.Size(79, 15);
             this.label8.TabIndex = 12;
             this.label8.Text = "Reorder Size:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(14, 333);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 17);
+            this.label9.Size = new System.Drawing.Size(58, 15);
             this.label9.TabIndex = 11;
             this.label9.Text = "Category:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Location = new System.Drawing.Point(14, 254);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 17);
+            this.label10.Size = new System.Drawing.Size(75, 15);
             this.label10.TabIndex = 10;
             this.label10.Text = "Description:";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
@@ -578,15 +612,41 @@
             // viewHelpToolStripMenuItem
             // 
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.viewHelpToolStripMenuItem.Text = "View help";
             this.viewHelpToolStripMenuItem.Click += new System.EventHandler(this.viewHelpToolStripMenuItem_Click);
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblUser.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(622, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(63, 14);
+            this.lblUser.TabIndex = 16;
+            this.lblUser.Text = "user_name";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(550, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(71, 14);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "logged in as:";
             // 
             // ProductUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PharmacyManagement.Properties.Resources.contactformbgnd;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(701, 454);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -603,7 +663,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownROrderU)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -659,5 +720,8 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHelpToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label label17;
     }
 }

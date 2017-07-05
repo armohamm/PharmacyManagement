@@ -83,6 +83,7 @@
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryManagement\Stock.cs" />
+    <Compile Include="InventoryManagement\StockReport.cs" />
     <Compile Include="InventoryManagement\StockUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contactformbgnd.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

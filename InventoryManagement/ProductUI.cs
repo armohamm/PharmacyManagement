@@ -13,9 +13,10 @@ namespace PharmacyManagement.InventoryManagement
 {
     public partial class ProductUI : Form
     {
-        public ProductUI()
+        public ProductUI(String user_name)
         {
             InitializeComponent();
+            lblUser.Text = user_name;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -204,8 +205,8 @@ namespace PharmacyManagement.InventoryManagement
                 label15.Text = row.Cells[0].Value.ToString();
                 txtBoxDescU.Text = row.Cells[2].Value.ToString();
                 cmbBoxCategoryU.Text = row.Cells[3].Value.ToString();
-                txtBoxUPriceU.Text = row.Cells[5].Value.ToString();
-                numUpDownROrderU.Value = Convert.ToInt32(row.Cells[6].Value);
+                txtBoxUPriceU.Text = row.Cells[6].Value.ToString();
+                numUpDownROrderU.Value = Convert.ToInt32(row.Cells[7].Value);
             }
             if (dataGridView1.SelectedRows.Count == 0)
             {
@@ -221,6 +222,9 @@ namespace PharmacyManagement.InventoryManagement
         {
             Product product = new Product(label15.Text);
             product.updateProduct(txtBoxDescU.Text, cmbBoxCategoryU.Text, Convert.ToInt32(numUpDownROrderU.Value), txtBoxUPriceU.Text);
+
+            label15.Text = "No product is selected";
+            refresh();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -241,7 +245,7 @@ namespace PharmacyManagement.InventoryManagement
             }
             else
             {
-                btnSave.Enabled = true;
+                btnSave.Enabled = false;
             }
         }
 
@@ -283,6 +287,40 @@ namespace PharmacyManagement.InventoryManagement
         private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\Resources\Help.pdf");
+        }
+
+        private void refresh()
+        {
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command;
+            if (txtBoxPNameS.Text.Length != 0)
+                command = new MySqlCommand("select * from product where name like '%" + txtBoxPNameS.Text + "%' ;", mySqlConn);
+            else if (txtBoxPCodeS.Text.Length != 0)
+                command = new MySqlCommand("select * from product where product_code like '%" + txtBoxPCodeS.Text + "%' ;", mySqlConn);
+            else
+                command = new MySqlCommand("select * from product where category like '%" + txtBoxCategoryS.Text + "%' ;", mySqlConn);
+
+            try
+            {
+                MySqlDataAdapter sqladp = new MySqlDataAdapter();
+                sqladp.SelectCommand = command;
+                DataTable datatable = new DataTable();
+                sqladp.Fill(datatable);
+                BindingSource bndsrc = new BindingSource();
+                bndsrc.DataSource = datatable;
+                dataGridView1.DataSource = bndsrc;
+                sqladp.Update(datatable);
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                mySqlConn.Close();
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
+            }
         }
     }
 }
