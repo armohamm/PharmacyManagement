@@ -1,21 +1,89 @@
-c:\users\dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe.config
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.pdb
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csprojResolveAssemblyReference.cache
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Properties.Resources.resources
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csproj.GenerateResource.Cache
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.exe
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.pdb
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.MainWindow.resources
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.SearchProduct.resources
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.UpdateStock.resources
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.data.dll
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.data.entity.dll
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.visualstudio.dll
-C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.web.dll
-C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ProductUI.resources
-C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.StockUI.resources
-C:\Users\Dilantha\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ReturnStock.resources
-G:\Projects\PharmacyManagement\03.07.2017\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe.config
-G:\Projects\PharmacyManagement\03.07.2017\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.exe
-G:\Projects\PharmacyManagement\03.07.2017\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.pdb
+c:\users\sahan\documents\visual studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe.config
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.pdb
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csprojResolveAssemblyReference.cache
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Properties.Resources.resources
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csproj.GenerateResource.Cache
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.exe
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.pdb
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ChangePassword.resources
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.employee.resources
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.owner.resources
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.supervisor.resources
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.EmployeeManagement.resources
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.login.resources
+C:\Users\SAHAN\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.data.dll
+E:\my c# projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe.config
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.exe
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.pdb
+E:\my c# projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe
+E:\my c# projects\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.pdb
+E:\my c# projects\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.data.dll
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Properties.Resources.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csproj.GenerateResource.Cache
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csprojResolveAssemblyReference.cache
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.AddEmployeeInterface.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ChangePasswordInterface.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.CashierInterface.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.AdminInterface.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ShowEmployeeInfomationInterface.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.SupervisorInterface.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.LoginInterface.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.MainWindow.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ProductUI.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ReturnStock.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.SearchProduct.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.StockUI.resources
+E:\my c# projects\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.UpdateStock.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe.config
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.exe
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.pdb
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.pdb
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\bin\Debug\mysql.data.dll
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csprojResolveAssemblyReference.cache
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Invoice.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.MakeASale.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.AddEmployeeInterface.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ChangePasswordInterface.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.CashierInterface.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.MainWindow.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ProductUI.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ReturnStock.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.SearchProduct.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.StockUI.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.UpdateStock.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.LoginInterface.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.AdminInterface.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Properties.Resources.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ShowEmployeeInfomationInterface.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.SupervisorInterface.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csproj.GenerateResource.Cache
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.EmployeeManagement.SecurityQuestion.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ReturnItemUI.resources
+C:\Users\SAHAN\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ReportUI.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe.config
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.exe
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\bin\Debug\PharmacyManagement.pdb
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.EmployeeManagement.SecurityQuestion.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ReturnItemUI.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ReportUI.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Invoice.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.MakeASale.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.AddEmployeeInterface.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ChangePasswordInterface.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.CashierInterface.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.MainWindow.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ProductUI.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.ReturnStock.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.SearchProduct.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.StockUI.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.InventoryManagement.UpdateStock.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.LoginInterface.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.AdminInterface.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Properties.Resources.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.ShowEmployeeInfomationInterface.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.SupervisorInterface.resources
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.csproj.GenerateResource.Cache
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.exe
+C:\Users\Dilantha\Desktop\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.pdb

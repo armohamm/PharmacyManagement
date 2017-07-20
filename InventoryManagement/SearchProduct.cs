@@ -13,9 +13,10 @@ namespace PharmacyManagement.InventoryManagement
 {
     public partial class SearchProduct : Form
     {
-        public SearchProduct()
+        public SearchProduct(String user_name)
         {
             InitializeComponent();
+            lblUser.Text = user_name;
         }
 
         private void txtBoxPCode_TextChanged(object sender, EventArgs e)
@@ -23,7 +24,7 @@ namespace PharmacyManagement.InventoryManagement
             txtBoxPName.Text = "";
             textBox1.Text = "";
             MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where product_code like '%" + txtBoxPCode.Text + "%' ;", mySqlConn);
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock_shop_1, stock_shop_2, unit_price from product where product_code like '%" + txtBoxPCode.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -52,7 +53,7 @@ namespace PharmacyManagement.InventoryManagement
             txtBoxPCode.Text = "";
             textBox1.Text = "";
             MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where name like '%" + txtBoxPName.Text + "%' ;", mySqlConn);
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock_shop_1, stock_shop_2, unit_price from product where name like '%" + txtBoxPName.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -91,7 +92,7 @@ namespace PharmacyManagement.InventoryManagement
             txtBoxPCode.Text = "";
             txtBoxPName.Text = "";
             MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock, unit_price from product where category like '%" + textBox1.Text + "%' ;", mySqlConn);
+            MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock_shop_1, stock_shop_2, unit_price from product where category like '%" + textBox1.Text + "%' ;", mySqlConn);
 
             try
             {
@@ -125,7 +126,7 @@ namespace PharmacyManagement.InventoryManagement
             foreach (DataGridViewRow row in dataGridViewProduct.SelectedRows)
             {
                 MySqlConnection mySqlConn = DBConnection.getConn();
-                MySqlCommand command = new MySqlCommand("select stock_id, vendor, exp_date, size, entered_date, cost_price, unit_price, status from stock where product_code = '" + row.Cells[0].Value.ToString() + "' and status <> 'returned' ;", mySqlConn);
+                MySqlCommand command = new MySqlCommand("select stock_id, vendor, exp_date, size, shop, entered_date, cost_price, unit_price, status from stock where product_code = '" + row.Cells[0].Value.ToString() + "' and status <> 'returned' ;", mySqlConn);
 
                 try
                 {
@@ -161,6 +162,11 @@ namespace PharmacyManagement.InventoryManagement
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E5B0909-A7EB-4B52-8A06-FD0E5604709E}</ProjectGuid>
+    <ProjectGuid>{06D4AE26-EA8B-4707-95F2-67DE118E4248}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PharmacyManagement</RootNamespace>
     <AssemblyName>PharmacyManagement</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,17 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="mysql.data">
-      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.data.dll</HintPath>
-    </Reference>
-    <Reference Include="mysql.data.entity">
-      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.data.entity.dll</HintPath>
-    </Reference>
-    <Reference Include="mysql.visualstudio">
-      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.visualstudio.dll</HintPath>
-    </Reference>
-    <Reference Include="mysql.web">
-      <HintPath>D:\Learning materials\OOSD project\Level2\Visual studio\MySql Plugins\mysql.web.dll</HintPath>
+      <HintPath>D:\Softwears\Visual Studio\MySql Plugins\mysql.data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,7 +51,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InventoryManagement\DBConnection.cs" />
+    <Compile Include="EmployeeManagement\SecurityQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\SecurityQuestion.Designer.cs">
+      <DependentUpon>SecurityQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesManagement\ReturnItemUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesManagement\ReturnItemUI.designer.cs">
+      <DependentUpon>ReturnItemUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs" />
+    <Compile Include="ReportUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportUI.designer.cs">
+      <DependentUpon>ReportUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesManagement\Return.cs" />
+    <Compile Include="SalesManagement\Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesManagement\Invoice.designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesManagement\Item.cs" />
+    <Compile Include="SalesManagement\MakeASale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesManagement\MakeASale.designer.cs">
+      <DependentUpon>MakeASale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesManagement\Sale.cs" />
+    <Compile Include="EmployeeManagement\AddEmployeeInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\AddEmployeeInterface.Designer.cs">
+      <DependentUpon>AddEmployeeInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagement\Cashier.cs" />
+    <Compile Include="EmployeeManagement\ChangePasswordInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\ChangePasswordInterface.Designer.cs">
+      <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagement\CashierInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\CashierInterface.Designer.cs">
+      <DependentUpon>CashierInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnection.cs" />
     <Compile Include="InventoryManagement\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,8 +144,59 @@
     <Compile Include="InventoryManagement\UpdateStock.Designer.cs">
       <DependentUpon>UpdateStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeManagement\LoginInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\LoginInterface.Designer.cs">
+      <DependentUpon>LoginInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagement\AdminInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\AdminInterface.Designer.cs">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagement\Owner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EmployeeManagement\ShowEmployeeInfomationInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\ShowEmployeeInfomationInterface.Designer.cs">
+      <DependentUpon>ShowEmployeeInfomationInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagement\Supervisor.cs" />
+    <Compile Include="EmployeeManagement\SupervisorInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagement\SupervisorInterface.Designer.cs">
+      <DependentUpon>SupervisorInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagement\User.cs" />
+    <EmbeddedResource Include="EmployeeManagement\SecurityQuestion.resx">
+      <DependentUpon>SecurityQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesManagement\ReturnItemUI.resx">
+      <DependentUpon>ReturnItemUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportUI.resx">
+      <DependentUpon>ReportUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesManagement\Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesManagement\MakeASale.resx">
+      <DependentUpon>MakeASale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement\AddEmployeeInterface.resx">
+      <DependentUpon>AddEmployeeInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement\ChangePasswordInterface.resx">
+      <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement\CashierInterface.resx">
+      <DependentUpon>CashierInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryManagement\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +215,12 @@
     <EmbeddedResource Include="InventoryManagement\UpdateStock.resx">
       <DependentUpon>UpdateStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement\LoginInterface.resx">
+      <DependentUpon>LoginInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement\AdminInterface.resx">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,6 +231,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="EmployeeManagement\ShowEmployeeInfomationInterface.resx">
+      <DependentUpon>ShowEmployeeInfomationInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagement\SupervisorInterface.resx">
+      <DependentUpon>SupervisorInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,23 +251,70 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
+    <None Include="Resources\logout-button-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginpage .jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\website_background_wallpapers_016.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registration-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1-3_low.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\product.jpg" />
+    <None Include="Resources\contactformbgnd.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stock.jpg" />
+    <None Include="Resources\product.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\contactformbgnd.jpg" />
+    <None Include="Resources\stock.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="boxes_128px_1113362_easyicon.net.ico" />
+    <None Include="Resources\ic_search_black_24dp_1x.png" />
+    <None Include="Resources\ic_search_black_24dp_2x1.png" />
+    <None Include="Resources\ic_create_black_24dp_1x.png" />
+    <None Include="Resources\ic_assignment_turned_in_black_24dp_1x.png" />
+    <None Include="Resources\ic_add_box_black_24dp_1x.png" />
+    <None Include="Resources\ic_add_shopping_cart_black_24dp_1x1.png" />
+    <None Include="Resources\ic_assignment_return_black_24dp_1x.png" />
+    <None Include="Resources\ic_add_shopping_cart_black_24dp_1x.png" />
+    <None Include="Resources\ic_refresh_black_24dp_1x.png" />
+    <None Include="Resources\ic_assignment_black_24dp_2x.png" />
+    <None Include="Resources\ic_verified_user_black_24dp_1x.png" />
+    <None Include="Resources\ic_clear_all_black_24dp_1x.png" />
+    <None Include="Resources\ic_save_black_24dp_1x.png" />
+    <None Include="Resources\ic_cancel_black_24dp_1x.png" />
+    <None Include="Resources\ic_update_black_24dp_1x.png" />
+    <None Include="Resources\ic_update_black_24dp_2x.png" />
+    <None Include="Resources\ic_local_grocery_store_black_24dp_2x1.png" />
+    <None Include="Resources\ic_swap_horiz_black_24dp_2x1.png" />
+    <None Include="Resources\ic_lock_open_black_24dp_2x1.png" />
+    <None Include="Resources\ic_search_black_24dp_2x.png" />
+    <None Include="Resources\ic_backspace_black_24dp_2x.png" />
+    <None Include="Resources\ic_local_grocery_store_black_24dp_2x.png" />
+    <None Include="Resources\ic_swap_horiz_black_24dp_2x.png" />
+    <None Include="Resources\ic_lock_open_black_24dp_2x.png" />
+    <None Include="Resources\ic_assessment_black_24dp_2x.png" />
+    <None Include="Resources\ic_local_pharmacy_black_24dp_2x.png" />
+    <None Include="Resources\ic_group_black_24dp_2x.png" />
+    <None Include="Resources\ic_person_add_black_24dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

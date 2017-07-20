@@ -5,28 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace PharmacyManagement.InventoryManagement
+namespace PharmacyManagement
 {
     class DBConnection
     {
-        private static Queue<MySqlConnection> queue = new Queue<MySqlConnection>();
+        private static List<MySqlConnection> store = new List<MySqlConnection>();
 
-        public static void loadQueue()
+        public static void loadStore()
         {
             for (int i = 0; i < 10; i++)
             {
-                queue.Enqueue(new MySqlConnection("server = 127.0.0.1; database = pharmacy_management; username = root; password = ;"));
+                store.Add(new MySqlConnection("server = 127.0.0.1; database = pharmacy_management; username = root; password = ;"));
             }
         }
 
         public static MySqlConnection getConn()
         {
-            return queue.Dequeue();
+            MySqlConnection temp = store[0];
+            store.RemoveAt(0);
+            return temp;
         }
 
         public static void returnConn(MySqlConnection mysqlconn)
         {
-            queue.Enqueue(mysqlconn);
+            store.Add(mysqlconn);
         }
     }
 }

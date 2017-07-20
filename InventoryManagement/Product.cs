@@ -148,7 +148,7 @@ namespace PharmacyManagement.InventoryManagement
             }
             command = new MySqlCommand("update stock set status = 'returned', returned_date = '" + formattedDate(DateTime.Today.ToString("MM/dd/yyyy")) + "' where product_code = '" + product_code + "' and stock_id = '" + stock.getStockID() + "'", mySqlConn);
             MySqlCommand command2 = new MySqlCommand("update product set stock_shop_" + stock.getShop() + " = '" + (stock_size - (Convert.ToInt32(stock.getSize()) - remStock)) + "' where product_code = '" + product_code + "'", mySqlConn);
-            MessageBox.Show("update product set stock_shop_" + stock.getShop() + " = '" + (stock_size - (Convert.ToInt32(stock.getSize()) - remStock)) + "' where product_code = '" + product_code + "'");
+            
             try
             {
                 mySqlConn.Open();
@@ -156,7 +156,7 @@ namespace PharmacyManagement.InventoryManagement
                 int numRowsUpdated2 = command2.ExecuteNonQuery();
                 MessageBox.Show("Data Updated");
 
-                StockReport stockReport = new StockReport();
+                InventoryManagement.StockReport stockReport = new InventoryManagement.StockReport();
                 stockReport.addToReport(user, product_code, stock.getStockID(), "returned", stock.getVendor(), stock.getExpDate(), remStock, stock.getShop(), stock.getCostPrice(), stock.getUnitPrice());
             }
             catch (Exception es)
@@ -171,18 +171,18 @@ namespace PharmacyManagement.InventoryManagement
             }
         }
 
-        public void updateStock(String user, Stock stock, String vendor, String exp_date, int size, String unit_price, String cost_price) 
+        public void updateStock(String user, Stock stock, String vendor, String exp_date, int size, String unit_price, String cost_price, int shop) 
         {
             int stock_size = 0;
             MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("select stock_shop_" + stock.getShop() + " from product where product_code = '" + product_code + "'", mySqlConn);
+            MySqlCommand command = new MySqlCommand("select stock_shop_" + shop + " from product where product_code = '" + product_code + "'", mySqlConn);
             try
             {
                 mySqlConn.Open();
                 MySqlDataReader datReader = command.ExecuteReader();
                 while (datReader.Read())
                 {
-                    stock_size = Convert.ToInt32(datReader.GetString("stock_shop_" + stock.getShop()));
+                    stock_size = Convert.ToInt32(datReader.GetString("stock_shop_" + shop));
                 }
             }
             catch (Exception es)
@@ -195,7 +195,7 @@ namespace PharmacyManagement.InventoryManagement
             }
 
             command = new MySqlCommand("update stock set vendor = '" + vendor + "', exp_date = '" + formattedDate(exp_date) + "', size = '" + size + "', unit_price = '" + unit_price + "', cost_price = '" + cost_price + "' where product_code = '" + product_code + "' and stock_id = '" + stock.getStockID() + "'", mySqlConn);
-            MySqlCommand command2 = new MySqlCommand("update product set stock_shop_" + stock.getShop() + " = '" + (stock_size + size - stock.getSize()) + "' where product_code = '" + product_code + "'", mySqlConn);
+            MySqlCommand command2 = new MySqlCommand("update product set stock_shop_" + shop + " = '" + (stock_size + size - stock.getSize()) + "' where product_code = '" + product_code + "'", mySqlConn);
             try
             {
                 mySqlConn.Open();
@@ -203,8 +203,8 @@ namespace PharmacyManagement.InventoryManagement
                 int numRowsUpdated2 = command2.ExecuteNonQuery();
                 MessageBox.Show("Data Updated");
 
-                StockReport stockReport = new StockReport();
-                stockReport.addToReport(user, product_code, stock.getStockID(), "updated", vendor, exp_date, size, stock.getShop(), cost_price, unit_price);
+                InventoryManagement.StockReport stockReport = new InventoryManagement.StockReport();
+                stockReport.addToReport(user, product_code, stock.getStockID(), "updated", vendor, exp_date, size, shop, cost_price, unit_price);
 
             }
             catch (Exception es)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateStock));
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -144,21 +145,25 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(323, 120);
+            this.button1.Image = global::PharmacyManagement.Properties.Resources.ic_update_black_24dp_1x;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(286, 116);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 30);
+            this.button1.Size = new System.Drawing.Size(97, 38);
             this.button1.TabIndex = 22;
-            this.button1.Text = "Update";
+            this.button1.Text = "     Update";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(407, 120);
+            this.button2.Image = global::PharmacyManagement.Properties.Resources.ic_cancel_black_24dp_1x;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(389, 116);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 30);
+            this.button2.Size = new System.Drawing.Size(97, 38);
             this.button2.TabIndex = 23;
-            this.button2.Text = "Cancel";
+            this.button2.Text = "     Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -225,7 +230,9 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label8);
             this.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "UpdateStock";
             this.Text = "Update Stock";
             this.Load += new System.EventHandler(this.UpdateStock_Load);

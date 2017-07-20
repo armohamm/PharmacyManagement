@@ -17,6 +17,8 @@ namespace PharmacyManagement.InventoryManagement
         private String user_name;
         private String type;
         private String shop;
+        private FormCollection list;
+        private List<Form> opened;
 
         public MainWindow(String user_name, String type, String shop)
         {
@@ -25,29 +27,75 @@ namespace PharmacyManagement.InventoryManagement
             this.user_name = user_name;
             this.type = type;
             this.shop = shop;
+            this.list = Application.OpenForms;
+            this.opened = new List<Form>();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            (new ProductUI(user_name)).Show();
+            bool temp = true;
+            foreach (Form form in list)
+            {
+                if (form.GetType().ToString() == "PharmacyManagement.InventoryManagement.ProductUI")
+                {
+                    form.Select();
+                    temp = false;
+                }
+            }
+            if (temp)
+            {
+                ProductUI pUI = new ProductUI(user_name);
+                opened.Add(pUI);
+                pUI.Show();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            (new SearchProduct()).Show();
+            bool temp = true;
+            foreach (Form form in list)
+            {
+                if (form.GetType().ToString() == "PharmacyManagement.InventoryManagement.SearchProduct")
+                {
+                    form.Select();
+                    temp = false;
+                }
+            }
+            if (temp)
+            {
+                SearchProduct sP = new SearchProduct(user_name);
+                opened.Add(sP);
+                sP.Show();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            (new StockUI(user_name, shop)).Show();
+            bool temp = true;
+            foreach (Form form in list)
+            {
+                if (form.GetType().ToString() == "PharmacyManagement.InventoryManagement.StockUI")
+                {
+                    form.Select();
+                    temp = false;
+                }
+            }
+            if (temp)
+            {
+                StockUI sUI = new StockUI(user_name, shop);
+                opened.Add(sUI);
+                sUI.Show();
+            }
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
             if (type == "Supervisor")
+            {
                 button1.Enabled = false;
-            String connString = "server = 127.0.0.1; database = pharmacy_management; username = root; password = ;";  //open the database
-            MySqlConnection MySqlConn = new MySqlConnection(connString);
+                productsToolStripMenuItem1.Enabled = false;
+            }
+            MySqlConnection MySqlConn = DBConnection.getConn();
             MySqlCommand command = new MySqlCommand("select product_code, stock_shop_1, stock_shop_2, re_order_size from product", MySqlConn);
 
             try
@@ -172,6 +220,10 @@ namespace PharmacyManagement.InventoryManagement
             {
                 MessageBox.Show(es.Message);
             }
+            finally
+            {
+                DBConnection.returnConn(MySqlConn);
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -190,17 +242,59 @@ namespace PharmacyManagement.InventoryManagement
 
         private void productsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            (new ProductUI(user_name)).Show();
+            bool temp = true;
+            foreach (Form form in list)
+            {
+                if (form.GetType().ToString() == "PharmacyManagement.InventoryManagement.ProductUI")
+                {
+                    form.Select();
+                    temp = false;
+                }
+            }
+            if (temp)
+            {
+                ProductUI pUI = new ProductUI(user_name);
+                opened.Add(pUI);
+                pUI.Show();
+            }
         }
 
         private void stocksToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            (new StockUI(user_name, shop)).Show();
+            bool temp = true;
+            foreach (Form form in list)
+            {
+                if (form.GetType().ToString() == "PharmacyManagement.InventoryManagement.StockUI")
+                {
+                    form.Select();
+                    temp = false;
+                }
+            }
+            if (temp)
+            {
+                StockUI sUI = new StockUI(user_name, shop);
+                opened.Add(sUI);
+                sUI.Show();
+            }
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new SearchProduct()).Show();
+            bool temp = true;
+            foreach (Form form in list)
+            {
+                if (form.GetType().ToString() == "PharmacyManagement.InventoryManagement.SearchProduct")
+                {
+                    form.Select();
+                    temp = false;
+                }
+            }
+            if (temp)
+            {
+                SearchProduct sP = new SearchProduct(user_name);
+                opened.Add(sP);
+                sP.Show();
+            }
         }
 
         private void stocksToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,14 +302,17 @@ namespace PharmacyManagement.InventoryManagement
             this.Close();
         }
 
-        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(@"C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\Resources\Help.pdf");
-        }
+        private void viewHelpToolStripMenuItem_Click(object sender, EventArgs e){}
 
-        private void aboutTeamsolutionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aboutTeamsolutionToolStripMenuItem_Click(object sender, EventArgs e){}
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Users\Dilantha\Documents\Visual Studio 2012\Projects\PharmacyManagement\PharmacyManagement\Resources\About.pdf");
+            foreach (Form form in opened)
+            {
+                if (!form.Equals(this))
+                    form.Close();
+            }
         }
     }
 }

@@ -14,10 +14,11 @@ namespace PharmacyManagement
         [STAThread]
         static void Main()
         {
-            InventoryManagement.DBConnection.loadQueue();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventoryManagement.MainWindow("Dilantha", "Owner", "Shop1"));
+            User.LogObj = new LoginInterface();
+            Application.Run(User.LogObj);
         }
+
     }
 }

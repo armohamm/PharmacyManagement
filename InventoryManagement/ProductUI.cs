@@ -52,10 +52,33 @@ namespace PharmacyManagement.InventoryManagement
 
         private void ProductUI_Load(object sender, EventArgs e)
         {
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select * from product where product_code like '%" + txtBoxPCodeS.Text + "%' ;", mySqlConn);
+
+            try
+            {
+                mySqlConn.Open();
+                MySqlDataAdapter sqladp = new MySqlDataAdapter();
+                sqladp.SelectCommand = command;
+                DataTable datatable = new DataTable();
+                sqladp.Fill(datatable);
+                BindingSource bndsrc = new BindingSource();
+                bndsrc.DataSource = datatable;
+                dataGridView1.DataSource = bndsrc;
+                sqladp.Update(datatable);
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                mySqlConn.Close();
+            }
+
             btnAdd.Enabled = false;
             btnSave.Enabled = false;
-            MySqlConnection mySqlConn = DBConnection.getConn();
-            MySqlCommand command = new MySqlCommand("select count(*) from product", mySqlConn);
+            command = new MySqlCommand("select count(*) from product", mySqlConn);
             
             try
             {
@@ -127,6 +150,7 @@ namespace PharmacyManagement.InventoryManagement
             finally
             {
                 mySqlConn.Close();
+                DBConnection.returnConn(mySqlConn);
                 mySqlConn = null;
             }
         }
@@ -224,6 +248,10 @@ namespace PharmacyManagement.InventoryManagement
             product.updateProduct(txtBoxDescU.Text, cmbBoxCategoryU.Text, Convert.ToInt32(numUpDownROrderU.Value), txtBoxUPriceU.Text);
 
             label15.Text = "No product is selected";
+            txtBoxDescU.Text = "";
+            cmbBoxCategoryU.SelectedIndex = 0;
+            txtBoxUPriceU.Text = "";
+            numUpDownROrderU.ResetText();
             refresh();
         }
 

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductUI));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -129,6 +131,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(18, 20);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(629, 293);
@@ -138,6 +141,7 @@
             // 
             // txtBoxUPrice
             // 
+            this.txtBoxUPrice.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUPrice.Location = new System.Drawing.Point(165, 246);
             this.txtBoxUPrice.Name = "txtBoxUPrice";
             this.txtBoxUPrice.Size = new System.Drawing.Size(100, 23);
@@ -147,6 +151,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(20, 249);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 15);
@@ -155,6 +160,7 @@
             // 
             // numUpDownRSize
             // 
+            this.numUpDownRSize.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numUpDownRSize.Location = new System.Drawing.Point(165, 213);
             this.numUpDownRSize.Margin = new System.Windows.Forms.Padding(4);
             this.numUpDownRSize.Maximum = new decimal(new int[] {
@@ -170,6 +176,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(20, 215);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -182,6 +189,7 @@
             this.cmbBoxCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbBoxCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxCategory.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBoxCategory.FormattingEnabled = true;
             this.cmbBoxCategory.Items.AddRange(new object[] {
             "1",
@@ -203,6 +211,7 @@
             // 
             // txtBoxDesc
             // 
+            this.txtBoxDesc.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDesc.Location = new System.Drawing.Point(165, 88);
             this.txtBoxDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxDesc.Multiline = true;
@@ -213,6 +222,7 @@
             // 
             // txtBoxName
             // 
+            this.txtBoxName.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.Location = new System.Drawing.Point(165, 56);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxName.Name = "txtBoxName";
@@ -223,6 +233,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(165, 30);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -234,6 +245,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 183);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -244,6 +256,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(20, 91);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -254,6 +267,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -264,6 +278,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -273,34 +288,40 @@
             // 
             // btnCancel1
             // 
+            this.btnCancel1.Image = global::PharmacyManagement.Properties.Resources.ic_cancel_black_24dp_1x;
+            this.btnCancel1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel1.Location = new System.Drawing.Point(538, 331);
             this.btnCancel1.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel1.Name = "btnCancel1";
             this.btnCancel1.Size = new System.Drawing.Size(109, 33);
             this.btnCancel1.TabIndex = 12;
-            this.btnCancel1.Text = "Cancel";
+            this.btnCancel1.Text = "    Cancel";
             this.btnCancel1.UseVisualStyleBackColor = true;
             this.btnCancel1.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnClear
             // 
+            this.btnClear.Image = global::PharmacyManagement.Properties.Resources.ic_clear_all_black_24dp_1x;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClear.Location = new System.Drawing.Point(421, 331);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(109, 33);
             this.btnClear.TabIndex = 11;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "    Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.Image = global::PharmacyManagement.Properties.Resources.ic_add_shopping_cart_black_24dp_1x;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(304, 331);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 33);
             this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "    Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -374,6 +395,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(650, 203);
@@ -460,7 +482,16 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(7, 25);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
@@ -487,23 +518,27 @@
             // 
             // btnCancel2
             // 
-            this.btnCancel2.Location = new System.Drawing.Point(528, 334);
+            this.btnCancel2.Image = global::PharmacyManagement.Properties.Resources.ic_cancel_black_24dp_1x;
+            this.btnCancel2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel2.Location = new System.Drawing.Point(541, 334);
             this.btnCancel2.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel2.Name = "btnCancel2";
-            this.btnCancel2.Size = new System.Drawing.Size(123, 34);
+            this.btnCancel2.Size = new System.Drawing.Size(110, 34);
             this.btnCancel2.TabIndex = 23;
-            this.btnCancel2.Text = "Cancel";
+            this.btnCancel2.Text = "    Cancel";
             this.btnCancel2.UseVisualStyleBackColor = true;
             this.btnCancel2.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(409, 334);
+            this.btnSave.Image = global::PharmacyManagement.Properties.Resources.ic_save_black_24dp_1x;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(435, 334);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(111, 34);
+            this.btnSave.Size = new System.Drawing.Size(98, 34);
             this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "    Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -650,6 +685,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductUI";

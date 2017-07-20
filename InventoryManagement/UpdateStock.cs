@@ -42,7 +42,7 @@ namespace PharmacyManagement.InventoryManagement
             Product product = new Product(product_code);
             Stock stock = new Stock(stock_id, Convert.ToInt32(size), shop);
 
-            product.updateStock(user, stock, textBox3.Text, dateTimePicker1.Text, Convert.ToInt32(numericUpDown1.Value), textBox4.Text, textBox5.Text);
+            product.updateStock(user, stock, textBox3.Text, dateTimePicker1.Text, Convert.ToInt32(numericUpDown1.Value), textBox4.Text, textBox5.Text, shop);
 
             this.Close();
         }

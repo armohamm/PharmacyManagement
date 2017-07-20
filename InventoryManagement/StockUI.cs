@@ -16,16 +16,16 @@ namespace PharmacyManagement.InventoryManagement
         private String user_name;
         private int shop;
         private String qshop;
+        private String temp;
                 
-        public StockUI(String user_name, String shop)
+        public StockUI(String user_name, String qshop)
         {
             InitializeComponent();
             lblUser.Text = user_name;
             this.user_name = user_name;
-
-            if (shop == "Shop1")
+            if (qshop == "Shop1")
                 this.shop = 1;
-            else if (shop == "Shop2")
+            else if (qshop == "Shop2")
                 this.shop = 2;
             else
                 this.shop = 0;
@@ -139,6 +139,28 @@ namespace PharmacyManagement.InventoryManagement
                 size = row.Cells[3].Value.ToString();
                 cost_price = row.Cells[4].Value.ToString();
                 unit_price = row.Cells[5].Value.ToString();
+            }
+            int shop = 0;
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select shop from stock where product_code = '" + product_code + "' and stock_id = '" + stock_id + "';", mySqlConn);
+            try
+            {
+                mySqlConn.Open();
+                MySqlDataReader datReader = command.ExecuteReader();
+                while (datReader.Read())
+                {
+                    shop = Convert.ToInt32(datReader.GetString("shop"));
+                }
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                mySqlConn.Close();
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
             }
             (new UpdateStock(user_name, product_code, stock_id, vendor, exp_date, size, cost_price, unit_price, shop)).Show();
         }
@@ -374,6 +396,29 @@ namespace PharmacyManagement.InventoryManagement
                 stock_id = row.Cells[0].Value.ToString();
                 size = row.Cells[3].Value.ToString();
             }
+
+            int shop = 0;
+            MySqlConnection mySqlConn = DBConnection.getConn();
+            MySqlCommand command = new MySqlCommand("select shop from stock where product_code = '" + product_code + "' and stock_id = '" + stock_id + "';", mySqlConn);
+            try
+            {
+                mySqlConn.Open();
+                MySqlDataReader datReader = command.ExecuteReader();
+                while (datReader.Read())
+                {
+                    shop = Convert.ToInt32(datReader.GetString("shop"));
+                }
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.Message);
+            }
+            finally
+            {
+                mySqlConn.Close();
+                DBConnection.returnConn(mySqlConn);
+                mySqlConn = null;
+            }
             (new ReturnStock(user_name, product_code, stock_id, size, shop)).Show();
             refresh();
         }
@@ -393,9 +438,13 @@ namespace PharmacyManagement.InventoryManagement
             button1.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
+            numericUpDown1.ResetText();
             if (shop != 0)
+            {
                 grpBoxShop.Visible = false;
-
+                productToolStripMenuItem.Enabled = false;
+            }
+            dateTimePicker1.MinDate = DateTime.Today.AddDays(1);
             MySqlConnection mySqlConn = DBConnection.getConn();
             MySqlCommand command = new MySqlCommand("select product_code, name, description, category, stock_shop_1, stock_shop_2, unit_price from product where product_code like '%" + textBox1.Text + "%' ;", mySqlConn);
 
@@ -518,6 +567,31 @@ namespace PharmacyManagement.InventoryManagement
             refresh();
             dataGridView3.DataSource = null;
             dataGridView3.Rows.Clear();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new ProductUI(user_name)).Show();
+        }
+
+        private void sotcksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new StockUI(user_name, temp)).Show();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new SearchProduct(user_name)).Show();
         }
     }
 }
